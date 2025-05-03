@@ -1,0 +1,27 @@
+{
+  "name": "typescript",
+  "version": "0.0.1",
+  "description": "Performance Benchmarks",
+  "main": "index.js",
+  "scripts": {
+    "js-loops-sum": "npx tsc && node src/js-loops-benchmark-sum.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lala-hakobyan/js-performance.git"
+  },
+  "keywords": [
+    "performance",
+    "js",
+    "javascript"
+  ],
+  "author": "Lala Hakobyan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lala-hakobyan/js-performance/issues"
+  },
+  "homepage": "https://github.com/lala-hakobyan/js-performance#readme",
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
