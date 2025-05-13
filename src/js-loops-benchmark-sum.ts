@@ -1,31 +1,37 @@
 /**
  * Results Node 16.20.2
  * 1. 1000 items
- *   for ~ 0.07ms
- *   forEach ~ 0.047ms
- *   reduce ~ 0.027ms
+ *   for ~ 0.073ms
+ *   forEach ~ 0.05ms
+ *   reduce ~ 0.026ms
+ *   for of ~ 0.093ms
  * 2. 100000 items
- *   for ~ 2.913ms
- *   forEach ~ 1.624ms
- *   reduce ~ 1.397ms
+ *   for ~ 3.024ms
+ *   forEach ~ 1.599ms
+ *   reduce ~ 1.141ms
+ *   for of ~ 5.183ms
  * 3. 1000000 items
- *   for ~ 1.043ms
- *   forEach ~ 12.787ms
- *   reduce ~ 9.603ms
+ *   for ~ 1.005ms
+ *   forEach ~ 12.971ms
+ *   reduce ~ 8.876ms
+ *   for of ~ 1.035ms
  *
  * Results Node 22.0.2
  * 1. 1000 items
- *   for ~ 0.075ms
+ *   for ~ 0.083ms
  *   forEach ~ 0.039ms
- *   reduce ~ 0.032ms
+ *   reduce ~ 0.035ms
+ *   for of ~ 0.05ms
  * 2. 100000 items
- *   for ~ 1.281ms
- *   forEach ~ 0.893ms
- *   reduce ~ 1.012ms
+ *   for ~ 1.33ms
+ *   forEach ~ 0.936ms
+ *   reduce ~ 0.903ms
+ *   for of ~ 2.043ms
  * 3. 1000000 items
- *   for ~ 2.247ms
- *   forEach ~ 12.54ms
- *   reduce ~ 6.907ms
+ *   for ~ 3.277ms
+ *   forEach ~ 10.997ms
+ *   reduce ~ 7.067ms
+ *   for of ~ 7.505ms
  */
 
 /**
@@ -50,7 +56,7 @@ function sumFor(arr: number[]) {
     }
 
     console.timeEnd(`for sum length: ${arr.length} items`);
-    console.log('for sum result: ${arr.length} items', sumFor);
+    console.log(`for sum result: ${arr.length} items:`, sumFor);
 }
 
 /**
@@ -67,7 +73,7 @@ function sumForEach(arr: number[]) {
     })
 
     console.timeEnd(`forEach sum length: ${arr.length} items`);
-    console.log('forEach sum result', sumForEach);
+    console.log(`forEach sum result: ${arr.length} items:`, sumForEach);
 }
 
 /**
@@ -81,7 +87,24 @@ function sumReduce(arr: number[]) {
     const sumReduce = arr.reduce((acc, currentValue) => acc + currentValue, 0);
 
     console.timeEnd(`reduce sum length: ${arr.length} items`);
-    console.log('reduce sum result', sumReduce);
+    console.log(`reduce sum result: ${arr.length} items:`, sumReduce);
+}
+
+/**
+ * Calculate sum with for of operator
+ * @param arr
+ */
+function sumForOf(arr: number[]) {
+    let sumForOf = 0;
+
+    console.time(`for of sum length: ${arr.length} items`);
+
+    for(let num of arr) {
+        sumForOf += num;
+    }
+
+    console.timeEnd(`for of sum length: ${arr.length} items`);
+    console.log(`for of sum result: ${arr.length} items`, sumForOf);
 }
 
 /*** Testing ***/
@@ -92,6 +115,7 @@ const arr1 = createArray(1000);
 sumFor(arr1);
 sumForEach(arr1);
 sumReduce(arr1);
+sumForOf(arr1);
 console.log('\n');
 
 // 100000 results
@@ -100,6 +124,7 @@ const arr2 = createArray(100000);
 sumFor(arr2);
 sumForEach(arr2);
 sumReduce(arr2);
+sumForOf(arr2);
 console.log('\n');
 
 // 1000000 results
@@ -108,4 +133,5 @@ const arr3 = createArray(1000000);
 sumFor(arr3);
 sumForEach(arr3);
 sumReduce(arr3);
+sumForOf(arr3);
 console.log('\n');
