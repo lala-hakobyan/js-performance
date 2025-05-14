@@ -1,8 +1,8 @@
 # JS Performance
-Performance benchmarks for Javascript
+A lightweight Node.js-based benchmarking project that analyzes the performance of different JavaScript looping and arithmetic strategies, complete with HTML reports and visual charts.
 
 # Compatibility
-Tested with **Node.js 16.20.2** and **Node.js 22.0.0** versions
+Tested with **Node.js 16.20.2** and **Node.js 22.0.0** versions.
 
 # How to run project locally?
 - Make sure you have [Node.js](https://nodejs.org/en/download) and npm (Node Package Manager) installed on your machine. 
@@ -29,9 +29,16 @@ You can view benchmark results in two ways:
 
 **Note:** Each time you run te command in the same Node env, the generated report file is replaced with new one.
 
+# License: Read-Only Notice
+- This project is released under the [MIT License](https://github.com/lala-hakobyan/js-performance/blob/main/LICENSE).  
+- You are welcome to clone, explore, and reuse it for educational or benchmarking purposes.  
+- However, to keep the repository clean and focused:  
+  - ❌ Please do not fork, submit pull requests, or open issues.  
+    If you have feedback or questions, feel free to reach out via LinkedIn or email.
+  - ✅ If you'd like to extend it, feel free to clone it locally.  
+- If you share or publish your own version, kindly retain the [license](https://github.com/lala-hakobyan/js-performance/blob/main/LICENSE) and provide appropriate credit.
+
 # Author
-**Name:** Lala Hakobyan
-
-**Email:** hakobyanlala@gmail.com
-
-**Linkedin Profile:** linkedin.com/in/lala-hakobyan-71aa64b8
+**Name:** Lala Hakobyan  
+**Email:** [hakobyanlala@gmail.com](mailto:hakobyanlala@gmail.com)  
+**Linkedin Profile:** [linkedin.com/in/lala-hakobyan-71aa64b8](https://www.linkedin.com/in/lala-hakobyan-71aa64b8/)    
