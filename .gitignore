@@ -1,2 +1,10 @@
 /.idea/
 /node_modules/
+# Ignore everything in the results folder
+/results/*
+# Don't ignore the static folder inside results
+!results/static/
+# Allow all files inside results/static
+!results/static/**
+/src/shared/report-generator.js
+/src/features/js-loops-benchmark-sum.js

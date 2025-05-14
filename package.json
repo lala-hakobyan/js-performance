@@ -4,7 +4,7 @@
   "description": "Performance Benchmarks",
   "main": "index.js",
   "scripts": {
-    "js-loops-sum": "npx tsc && node src/js-loops-benchmark-sum.js"
+    "js-loops-sum": "npx tsc && node src/features/js-loops-benchmark-sum.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,9 @@
   },
   "homepage": "https://github.com/lala-hakobyan/js-performance#readme",
   "devDependencies": {
+  },
+  "dependencies": {
+    "@types/node": "^22.15.17",
     "typescript": "^5.8.3"
   }
 }
