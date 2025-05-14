@@ -1,5 +1,5 @@
 # JS Performance
-A lightweight Node.js-based benchmarking project that analyzes the performance of various JavaScript loop strategies for summing arrays, with generated HTML reports and visual charts.
+A lightweight Node.js-based benchmarking project that analyzes the performance of various JavaScript loop strategies for arithmetic operations, with generated HTML reports and visual charts.
 
 # Compatibility
 Tested with **Node.js 16.20.2** and **Node.js 22.0.0** versions.
