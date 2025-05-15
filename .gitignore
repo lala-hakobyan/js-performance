@@ -8,3 +8,4 @@
 !results/static/**
 /src/shared/report-generator.js
 /src/features/js-loops-benchmark-sum.js
+/src/data/interface.js

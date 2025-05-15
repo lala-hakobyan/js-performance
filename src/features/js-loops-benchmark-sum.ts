@@ -1,5 +1,5 @@
 /**
- * Generates benchmarks for sum operation with for, forEach, reduce and for of operators
+ * Generates benchmarks for sum operation with for, forEach, reduce, for of and while operators
  */
 import {generateReport} from "../shared/report-generator";
 import {LoopData} from "../data/interface";
@@ -125,6 +125,34 @@ function sumForOf(arr: number[]): LoopData {
     }
 }
 
+/**
+ * Calculate sum with for of operator
+ * @param arr
+ */
+function sumWhile(arr: number[]): LoopData {
+    let sumWhile = 0;
+    let index = 0;
+    let totalTime;
+    const startTime = performance.now();
+
+    while(index < arr.length) {
+        sumWhile+=arr[index];
+        index++;
+    }
+
+    totalTime  = roundTime(startTime, performance.now());
+
+    console.log(`for of while ${arr.length} items: execution time: ${totalTime}ms`);
+    console.log(`for of while ${arr.length} items: sum result:`, sumWhile);
+
+    return {
+        count: arr.length,
+        operator: 'while',
+        time: totalTime,
+        result: sumWhile
+    }
+}
+
 /*** Testing ***/
 const testData = [1000,100000,1000000];
 const resultData: LoopData[] = [];
@@ -136,8 +164,9 @@ testData.forEach((count: number) => {
     resultData.push(sumForEach(arr1))
     resultData.push(sumReduce(arr1));
     resultData.push(sumForOf(arr1));
+    resultData.push(sumWhile(arr1));
     console.log('\n');
 })
 
 // Generate report
-generateReport(resultData, 4);
+generateReport(resultData, 5);

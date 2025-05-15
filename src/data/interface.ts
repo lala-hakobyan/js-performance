@@ -21,15 +21,17 @@ export enum BarChartColor {
     for = 'red',
     forEach = 'green',
     reduce = 'blue',
-    forOf = 'orange'
+    forOf = 'orange',
+    while = 'brown',
 }
 
 export enum Operator {
     for = 'for',
     forEach = 'forEach',
     reduce = 'reduce',
-    forOf = 'for of'
+    forOf = 'for of',
+    while = 'while'
 }
 
-type OperatorType = 'for' | 'forEach' | 'reduce' | 'forOf';
+type OperatorType = 'for' | 'forEach' | 'reduce' | 'forOf' | 'while';
 

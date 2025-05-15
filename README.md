@@ -9,12 +9,12 @@ Tested with **Node.js 16.20.2** and **Node.js 22.0.0** versions.
 For your convenience you can use nvm (Node Version Manager) which allows to switch between different node versions.
 - Go to the root folder and do `npm install`. It will install all necessary dependencies.
 - Check `package.json > scripts` section for the available commands:
-  - Use `npm run js-loops-sum` to run feature of **Calculating Sum with for, forEach and reduce for different number of 
+  - Use `npm run js-loops-sum` to run feature of **Calculating Sum with for, forEach, reduce, for of and while for different number of 
   items and generating report based on results**.
 
 # Features
-### 1. Calculate Sum with for, forEach and reduce for different number of items
-**Description:** Calculates sum with `for`, `forEach`, `reduce` and `for of` operators and with different numbers: 
+### 1. Calculate Sum with for, forEach, reduce, for of and while for different number of items
+**Description:** Calculates sum with `for`, `forEach`, `reduce`, `for of` and `while` operators with different numbers: 
 `1000`, `100000`, `1000000` and compares results for `Node.js 16.20.2` and `Node.js 22.0.0` versions. 
 Generates dynamic table and bar chart html reports under the folder `results`.
 

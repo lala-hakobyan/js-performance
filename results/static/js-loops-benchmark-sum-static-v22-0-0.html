@@ -1,184 +1,192 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-    <title>Node.js v22.0.0: Performance Report for Sum operation</title>
-    <style>
-        body,html {
-            font-size: 16px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        .report-table {
-            border-spacing: 0;
-            text-align: left;
-        }
-        .report-table td, .report-table th {
-            padding: 5px;
-            border-bottom: 1px solid #a9a9a9;
-            border-right: 1px solid #a9a9a9;
-        }
-        .report-table th {
-            border-top: 1px solid #a9a9a9;
-        }
-        .report-table td:nth-child(1), .report-table th:nth-child(1) {
-            border-left: 1px solid #a9a9a9;
-        }
-        .clr-palette-0 {
-            background-color: #F3F3F3;
-        }
-        .clr-palette-1 {
-            background-color: #D9EAD3;
-        }
-        .clr-palette-2 {
-            background-color: #FFF2CC;
-        }
-        .chart-canvas, .report-table {
-            width: 100%;
-            max-width: 500px;
-        }
-        .page-title {
-            font-size: 1.35rem;
-            margin: 1rem 0 1rem 0;
-        }
-        .page-subtitle {
-            font-size: 1.2rem;
-            margin: 2rem 0 1rem 0;
-        }
-        @media screen and (min-width: 768px) {
-            .report-table {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <h1 class="page-title">Performance Benchmarks for Sum operation for Node.js v22.0.0</h1>
-
-    <section>
-        <h2 class="page-subtitle">Performance Report: Sum operation: Node.js v22.0.0</h2>
-        <table class="report-table">
-            <thead>
-            <tr>
-                <th>Array length</th>
-                <th>Operator</th>
-                <th>~Result</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="clr-palette-0">
-                <td>1000</td>
-                <td>for</td>
-                <td>0.03ms</td>
-            </tr><tr class="clr-palette-0">
-                <td>1000</td>
-                <td>forEach</td>
-                <td>0.031ms</td>
-            </tr><tr class="clr-palette-0">
-                <td>1000</td>
-                <td>reduce</td>
-                <td>0.027ms</td>
-            </tr><tr class="clr-palette-0">
-                <td>1000</td>
-                <td>for of</td>
-                <td>0.037ms</td>
-            </tr><tr class="clr-palette-1">
-                <td>100000</td>
-                <td>for</td>
-                <td>1.401ms</td>
-            </tr><tr class="clr-palette-1">
-                <td>100000</td>
-                <td>forEach</td>
-                <td>0.806ms</td>
-            </tr><tr class="clr-palette-1">
-                <td>100000</td>
-                <td>reduce</td>
-                <td>1.286ms</td>
-            </tr><tr class="clr-palette-1">
-                <td>100000</td>
-                <td>for of</td>
-                <td>2.034ms</td>
-            </tr><tr class="clr-palette-2">
-                <td>1000000</td>
-                <td>for</td>
-                <td>2.666ms</td>
-            </tr><tr class="clr-palette-2">
-                <td>1000000</td>
-                <td>forEach</td>
-                <td>12.885ms</td>
-            </tr><tr class="clr-palette-2">
-                <td>1000000</td>
-                <td>reduce</td>
-                <td>6.831ms</td>
-            </tr><tr class="clr-palette-2">
-                <td>1000000</td>
-                <td>for of</td>
-                <td>7.359ms</td>
-            </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <section>
-        <h2 class="page-subtitle">Performance Charts: Sum operation: Node.js v22.0.0</h2>
-        <canvas id="chartId-0" class="chart-canvas"></canvas>
-        <canvas id="chartId-1" class="chart-canvas"></canvas>
-        <canvas id="chartId-2" class="chart-canvas"></canvas>
-    </section>
-
-    <script>
-        new Chart('chartId-0', {
-            type: 'bar',
-            data: {
-                labels: ["for","forEach","reduce","for of"],
-                datasets: [{
-                    backgroundColor: ["red","green","blue","orange"],
-                    data: [0.03,0.031,0.027,0.037],
-                }]
-            },
-            options: {
-                legend: {display: false},
-                title: {
-                    display: true,
-                    text: "Array sum for 1000 items",
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+            <title>Node.js v22.0.0: Performance Report for Sum operation</title>
+            <style>
+                body,html {
+                    font-size: 16px;
+                    font-family: Arial, Helvetica, sans-serif;
                 }
-            }
-        });
-        new Chart('chartId-1', {
-            type: 'bar',
-            data: {
-                labels: ["for","forEach","reduce","for of"],
-                datasets: [{
-                    backgroundColor: ["red","green","blue","orange"],
-                    data: [1.401,0.806,1.286,2.034],
-                }]
-            },
-            options: {
-                legend: {display: false},
-                title: {
-                    display: true,
-                    text: "Array sum for 100000 items",
+                .report-table {
+                    border-spacing: 0;
+                    text-align: left;
                 }
-            }
-        });
-        new Chart('chartId-2', {
-            type: 'bar',
-            data: {
-                labels: ["for","forEach","reduce","for of"],
-                datasets: [{
-                    backgroundColor: ["red","green","blue","orange"],
-                    data: [2.666,12.885,6.831,7.359],
-                }]
-            },
-            options: {
-                legend: {display: false},
-                title: {
-                    display: true,
-                    text: "Array sum for 1000000 items",
+                .report-table td, .report-table th {
+                    padding: 5px;
+                    border-bottom: 1px solid #a9a9a9;
+                    border-right: 1px solid #a9a9a9;
                 }
-            }
-        });
-    </script>
-</body>
-</html>
+                .report-table th {
+                    border-top: 1px solid #a9a9a9;
+                }
+                .report-table td:nth-child(1), .report-table th:nth-child(1) {
+                    border-left: 1px solid #a9a9a9;
+                }
+                .clr-palette-0 {
+                    background-color: #F3F3F3;
+                }
+                .clr-palette-1 {
+                    background-color: #D9EAD3;
+                }
+                .clr-palette-2 {
+                    background-color: #FFF2CC;
+                }
+                .clr-palette-3 {
+                    background-color: #CFE2F3;
+                }
+                .chart-canvas, .report-table {
+                    width: 100%;
+                    max-width: 500px;
+                }
+                .page-title {
+                    font-size: 1.35rem;
+                    margin: 1rem 0 1rem 0;
+                }
+                .page-subtitle {
+                    font-size: 1.2rem;
+                    margin: 2rem 0 1rem 0;
+                }
+                @media screen and (min-width: 768px) {
+                    .report-table {
+                        font-size: 1.2rem;
+                    }
+                }
+            </style>
+        </head>
+        <body>
+        <h1 class="page-title">Performance Benchmarks for Sum operation for Node.js v22.0.0</h1>
+        <section>
+            <h2 class="page-subtitle">Performance Report: Sum operation: Node.js v22.0.0</h2>
+            <table class="report-table">
+                <thead>
+                    <tr>
+                        <th>Array length</th>
+                        <th>Operator</th>
+                        <th>~Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="clr-palette-0">
+                        <td>1000</td>
+                        <td>for</td>
+                        <td>0.032ms</td>
+                    </tr><tr class="clr-palette-0">
+                        <td>1000</td>
+                        <td>forEach</td>
+                        <td>0.035ms</td>
+                    </tr><tr class="clr-palette-0">
+                        <td>1000</td>
+                        <td>reduce</td>
+                        <td>0.058ms</td>
+                    </tr><tr class="clr-palette-0">
+                        <td>1000</td>
+                        <td>for of</td>
+                        <td>0.061ms</td>
+                    </tr><tr class="clr-palette-0">
+                        <td>1000</td>
+                        <td>while</td>
+                        <td>0.075ms</td>
+                    </tr><tr class="clr-palette-1">
+                        <td>100000</td>
+                        <td>for</td>
+                        <td>2.109ms</td>
+                    </tr><tr class="clr-palette-1">
+                        <td>100000</td>
+                        <td>forEach</td>
+                        <td>1.739ms</td>
+                    </tr><tr class="clr-palette-1">
+                        <td>100000</td>
+                        <td>reduce</td>
+                        <td>1.482ms</td>
+                    </tr><tr class="clr-palette-1">
+                        <td>100000</td>
+                        <td>for of</td>
+                        <td>2.112ms</td>
+                    </tr><tr class="clr-palette-1">
+                        <td>100000</td>
+                        <td>while</td>
+                        <td>1.292ms</td>
+                    </tr><tr class="clr-palette-2">
+                        <td>1000000</td>
+                        <td>for</td>
+                        <td>2.783ms</td>
+                    </tr><tr class="clr-palette-2">
+                        <td>1000000</td>
+                        <td>forEach</td>
+                        <td>13.809ms</td>
+                    </tr><tr class="clr-palette-2">
+                        <td>1000000</td>
+                        <td>reduce</td>
+                        <td>7.405ms</td>
+                    </tr><tr class="clr-palette-2">
+                        <td>1000000</td>
+                        <td>for of</td>
+                        <td>11.806ms</td>
+                    </tr><tr class="clr-palette-2">
+                        <td>1000000</td>
+                        <td>while</td>
+                        <td>3.153ms</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section>
+            <h2 class="page-subtitle">Performance Charts: Sum operation: Node.js v22.0.0</h2>
+            <canvas id="chartId-0" class="chart-canvas"></canvas><canvas id="chartId-1" class="chart-canvas"></canvas><canvas id="chartId-2" class="chart-canvas"></canvas>
+            <script> new Chart('chartId-0', {
+                type: 'bar',
+                data: {
+                    labels: ["for","forEach","reduce","for of","while"],
+                    datasets: [{
+                        backgroundColor: ["red","green","blue","orange","brown"],
+                        data: [0.032,0.035,0.058,0.061,0.075],
+                    }]
+                },
+                options: {
+                    legend: {display: false},
+                    title: {
+                        display: true,
+                        text: "Array sum for 1000 items",
+                    }
+                }
+            }); </script><script> new Chart('chartId-1', {
+                type: 'bar',
+                data: {
+                    labels: ["for","forEach","reduce","for of","while"],
+                    datasets: [{
+                        backgroundColor: ["red","green","blue","orange","brown"],
+                        data: [2.109,1.739,1.482,2.112,1.292],
+                    }]
+                },
+                options: {
+                    legend: {display: false},
+                    title: {
+                        display: true,
+                        text: "Array sum for 100000 items",
+                    }
+                }
+            }); </script><script> new Chart('chartId-2', {
+                type: 'bar',
+                data: {
+                    labels: ["for","forEach","reduce","for of","while"],
+                    datasets: [{
+                        backgroundColor: ["red","green","blue","orange","brown"],
+                        data: [2.783,13.809,7.405,11.806,3.153],
+                    }]
+                },
+                options: {
+                    legend: {display: false},
+                    title: {
+                        display: true,
+                        text: "Array sum for 1000000 items",
+                    }
+                }
+            }); </script>
+        </section>
+        
+        </body>
+    </html>
