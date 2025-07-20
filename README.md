@@ -4,6 +4,11 @@ A lightweight Node.js-based benchmarking project that analyzes the performance o
 # Compatibility
 Tested with **Node.js 16.20.2** and **Node.js 22.0.0** versions.
 
+# Technologies Used
+- **Node.js**
+- **Typescript**
+- **HTML**
+
 # How to run project locally?
 - Make sure you have [Node.js](https://nodejs.org/en/download) and npm (Node Package Manager) installed on your machine. 
 For your convenience you can use nvm (Node Version Manager) which allows to switch between different node versions.
