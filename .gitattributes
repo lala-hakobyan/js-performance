@@ -1,0 +1,2 @@
+# File for helping Github to correctly mark technologies used in the project
+*.ts linguist-language=Typescript
