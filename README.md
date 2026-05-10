@@ -40,7 +40,7 @@ This project is released under the [MIT License](./LICENSE).
 - **Usage:** You are welcome to clone and fork this repository for benchmarking or experimenting.
 - **Credit:** If you share or publish your own version, please retain the original license and give appropriate credit to [Lala Hakobyan](https://github.com/lala-hakobyan) or link back to the original repository.
 - **Contributions:** I am not accepting pull requests or issues for this project at this time.
-- **Feedback:** For questions or performance results, reach out via [LinkedIn](https://www.linkedin.com/in/lala-hakobyan) or [email](mailto:hakobyanlala@gmail.com).
+- **Feedback:** For questions or feedback, please reach out via [LinkedIn](https://www.linkedin.com/in/lala-hakobyan) or [email](mailto:hakobyanlala@gmail.com).
 
 # Author
 **Name:** Lala Hakobyan  
