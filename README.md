@@ -34,14 +34,13 @@ You can view benchmark results in two ways:
 
 **Note:** Each time you run te command in the same Node env, the generated report file is replaced with new one.
 
-# License: Read-Only Notice
-- This project is released under the [MIT License](https://github.com/lala-hakobyan/js-performance/blob/main/LICENSE).  
-- You are welcome to clone, explore, and reuse it for educational or benchmarking purposes.  
-- However, to keep the repository clean and focused:  
-  - ❌ Please do not fork, submit pull requests, or open issues.  
-    If you have feedback or questions, feel free to reach out via LinkedIn or email.
-  - ✅ If you'd like to extend it, feel free to clone it locally.  
-- If you share or publish your own version, kindly retain the [license](https://github.com/lala-hakobyan/js-performance/blob/main/LICENSE) and provide appropriate credit.
+# License
+This project is released under the [MIT License](./LICENSE).
+
+- **Usage:** You are welcome to clone and fork this repository for benchmarking or experimenting.
+- **Credit:** If you share or publish your own version, please retain the original license and give appropriate credit to [Lala Hakobyan](https://github.com/lala-hakobyan) or link back to the original repository.
+- **Contributions:** I am not accepting pull requests or issues for this project at this time.
+- **Feedback:** For questions or performance results, reach out via [LinkedIn](https://www.linkedin.com/in/lala-hakobyan) or [email](mailto:hakobyanlala@gmail.com).
 
 # Author
 **Name:** Lala Hakobyan  
